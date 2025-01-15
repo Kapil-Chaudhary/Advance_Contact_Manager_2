@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+<head>
+    <title>About ACM</title>
+</head>
+
+<body class="bg-gray-100">
+<div id="content">
+
+    <!-- Main Content -->
+    <div class="pt-10 flex justify-center items-center">
+        <div class="bg-white shadow-lg rounded-lg p-8">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-4">Welcome to the About Page</h1>
+            <p class="text-gray-600 mb-4">Advanced Contact Manager is a powerful application designed to help users efficiently manage their personal and professional contacts. <br> With our user-friendly interface and robust features, staying connected has never been easier</p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 mt-6 mb-2">Our Mission</h2>
+            <p class="text-gray-600 mb-4">
+                Our mission is to simplify contact management for both personal and professional needs, allowing you to focus on what truly matters—building and maintaining your relationships.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 mt-6 mb-2">Key Features</h2>
+            <ul class="list-disc list-inside mb-4 text-gray-600">
+                <li>Easy Contact Management: Add, edit, and delete contacts with a few clicks.</li>
+                <li>Group Segmentation: Organize your contacts into groups for better management.</li>
+                <li>Search Functionality: Quickly find contacts using our robust search feature.</li>
+                <li>Secure Data Storage: Your data is stored securely, ensuring your privacy and peace of mind.</li>
+                <li>Cross-Platform Access: Access your contacts from any device, anywhere, anytime.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold text-gray-700 mt-6 mb-2">Contact Us</h2>
+            <p class="text-gray-600">
+                If you have any questions or feedback, feel free to reach out at
+                <a href="mailto:kapilchaudhary024@gmail.com" class="text-blue-500">@kapilchaudhary024@gmail.com</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    console.log("This is the profile page");
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title data-th-text="${loggedInUser.name} + ' | Dashboard'">Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Optional: Custom styles can be added here */
+    </style>
+</head>
+<body class="bg-gray-100">
+<div id="content">
+    <!-- Sidebar -->
+    <div th:if="${loggedInUser}" class="sidebar">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="sm:pl-64 pt-20 flex justify-center items-center min-h-screen text-center" style="height: 600px">
+        <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-4">Welcome to the Dashboard</h1>
+            <p class="text-gray-600">Manage all your contacts with ease!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    console.log("This is the profile page");
+</script>
+</body>
+</html>
