@@ -24,7 +24,7 @@ public class AuthController {
     @Autowired
     private UserRepo userRepo;
 
-    @GetMapping("/varify-email")
+    @GetMapping("/verify-email")
     public String verifyEmail(@RequestParam("token") String token, HttpSession session) {
 
         User user = userRepo.findByEmailToken(token).orElse(null);
@@ -47,6 +47,7 @@ public class AuthController {
                     .type(MessageType.red)
                     .content("Email not verified ! Token is not associated with user .")
                     .build());
+            System.out.println("error occur in validating email token");
             return "error_page";
 
         }
@@ -55,7 +56,7 @@ public class AuthController {
                 .type(MessageType.red)
                 .content("Email not verified ! Token is not associated with user .")
                 .build());
-
+        System.out.println("error occur in validating email token");
         return "error_page";
     }
 
