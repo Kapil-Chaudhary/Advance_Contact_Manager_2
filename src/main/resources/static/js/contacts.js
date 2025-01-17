@@ -1,7 +1,9 @@
 console.log("Contacts.js");
-const baseURL = "http://localhost:8081";
-// const baseURL = "https://www.scm20.site";
+// const baseURL = "http://localhost:8081";
+// const baseURL = "http://acm20.ap-south-1.elasticbeanstalk.com"; // http://acm20.ap-south-1.elasticbeanstalk.com/
+const baseURL = "https://advancecontact.site"; // http://acm20.ap-south-1.elasticbeanstalk.com/
 const viewContactModal = document.getElementById("view_contact_modal");
+
 
 // options with default values
 const options = {
@@ -70,14 +72,59 @@ async function loadContactdata(id) {
 
 // delete contact
 
+// async function deleteContact(id) {
+//     Swal.fire({
+//         title: "Do you want to delete the contact?",
+//         icon: "warning",
+//         showCancelButton: true,
+//         confirmButtonText: "Delete",
+//     }).then((result) => {
+//         /* Read more about isConfirmed, isDenied below */
+//         if (result.isConfirmed) {
+//             const url = `${baseURL}/user/contacts/delete/` + id;
+//             window.location.replace(url);
+//         }
+//     });
+// }
+
 async function deleteContact(id) {
+    // Create a <style> element and append custom CSS
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .swal2-confirm {
+            background-color: #d9534f !important;
+            color: white !important;
+            border: none !important;
+        }
+
+        .swal2-cancel {
+            background-color: #5bc0de !important;
+            color: white !important;
+            border: none !important;
+        }
+
+        .swal2-confirm:hover {
+            background-color: #c9302c !important;
+        }
+
+        .swal2-cancel:hover {
+            background-color: #31b0d5 !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Show the SweetAlert modal with customized buttons
     Swal.fire({
         title: "Do you want to delete the contact?",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Delete",
+        cancelButtonText: "Cancel",
+        customClass: {
+            confirmButton: 'swal2-confirm',
+            cancelButton: 'swal2-cancel'
+        }
     }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
             const url = `${baseURL}/user/contacts/delete/` + id;
             window.location.replace(url);

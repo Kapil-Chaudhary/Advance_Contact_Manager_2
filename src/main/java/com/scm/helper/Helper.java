@@ -57,9 +57,9 @@ public class Helper {
     // http://localhost:8081/auth/varify-email?token=a5ecf604-77fe-44c4-8c65-298f205a8e23
     public String getEmailForEmailVerification(String emailToken) {
 
-        String link = "http://localhost:8081/auth/varify-email?token=" + emailToken;
-        return link;
+//        String link = "http://localhost:8081/auth/varify-email?token=" + emailToken;
+//        return link;
 
-//        return this.baseUrl + "/auth/verify-email?token=" + emailToken;
+        return this.baseUrl + "/auth/verify-email?token=" + emailToken;
     }
 }
