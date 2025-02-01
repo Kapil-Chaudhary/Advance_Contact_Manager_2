@@ -25,3 +25,4 @@ Password: admin
 🙌 Why I Built It:
 I wanted to develop an application that is not only feature-rich but also secure, scalable, and ready for modern cloud deployment. With advanced Spring Boot features like logging, profiling, and intuitive organization, this project reflects my commitment to building impactful software solutions.
 I’d love to hear your thoughts and feedback!
+ 
